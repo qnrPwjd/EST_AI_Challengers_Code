@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yacht Dice</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+<body>
+  <main id="home">
+    <section class="hero">
+      <div class="eyebrow">a classic dice game, reimagined</div>
+      <h1>Yacht Dice</h1>
+      <p>운과 전략을 섞어 최고의 한 수를 만드세요.<br>매 턴 3번의 기회, 당신의 선택이 점수를 완성합니다.</p>
+      <div class="home-actions">
+        <button class="primary" data-mode="ai">인공지능과 플레이</button>
+        <button class="secondary" data-mode="human">사람과 플레이</button>
+        <button class="secondary" id="rules-toggle">게임 설명 보기</button>
+      </div>
+      <div class="rules-card hidden" id="rules"><strong>게임 방법</strong><ul><li>각 플레이어는 12번씩 턴을 진행합니다. 한 턴에 주사위를 최대 3번 굴릴 수 있어요.</li><li>남길 주사위를 클릭해 고정한 뒤 다시 굴리거나, 왼쪽 족보를 선택해 점수를 기록하세요.</li><li>모든 족보를 채운 뒤 총점이 높은 플레이어가 이깁니다. 상단 숫자 족보 합계가 63점 이상이면 +35점 보너스를 받습니다.</li></ul></div>
+    </section>
+  </main>
+  <main id="game" class="hidden">
+    <header class="topbar"><div class="logo">Yacht <span>Dice</span></div><div class="mode-badge" id="mode-badge"></div><button class="back" id="home-btn">← 처음으로</button></header>
+    <div class="game-layout">
+      <aside class="score-panel"><h2>점수판</h2><div class="score-head"><span>족보</span><span id="p1-head">Player 1</span><span id="p2-head">Player 2</span></div><div id="scoreboard"></div></aside>
+      <section class="play-panel"><div id="turn-label"></div><div class="turn-sub" id="turn-sub"></div><div class="dice-area" id="dice-area"></div><div class="controls"><button class="primary" id="roll-btn">주사위 굴리기</button><div class="hint" id="hint"></div></div></section>
+    </div>
+  </main>
+  <div id="modal" class="hidden"><div class="modal-box"><div class="modal-icon" id="modal-icon">🏆</div><h2 id="modal-title"></h2><p id="modal-text"></p><button class="primary" id="modal-btn">처음으로</button></div></div>
+  <script src="js/game.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>
