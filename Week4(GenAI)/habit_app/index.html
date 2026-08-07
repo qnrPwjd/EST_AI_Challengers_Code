@@ -9,11 +9,20 @@
 </head>
 <body>
   <main class="app-shell">
+    <div class="celebration" id="celebration" aria-live="polite" aria-atomic="true" hidden>
+      <div class="confetti" aria-hidden="true"></div>
+      <div class="celebration-message">
+        <span class="celebration-icon" aria-hidden="true">✦</span>
+        <strong>오늘의 습관을 모두 달성했어요!</strong>
+        <span>정말 멋져요. 내일도 함께해요.</span>
+      </div>
+    </div>
     <section class="habit-app" aria-labelledby="app-title">
       <header class="app-header">
         <p class="eyebrow" id="today-date"></p>
         <h1 id="app-title">오늘의 습관</h1>
         <p class="greeting" id="greeting"></p>
+        <p class="streak" aria-live="polite"><span aria-hidden="true">🔥</span> <strong id="streak-count">연속 0일째</strong></p>
       </header>
 
       <section class="progress-card" aria-labelledby="progress-title">
@@ -38,9 +47,17 @@
         <p class="empty-message" id="empty-message" hidden>아직 습관이 없어요. 첫 습관을 추가해 보세요.</p>
       </section>
 
+      <section class="weekly-section" aria-labelledby="weekly-title">
+        <div class="section-heading">
+          <h2 id="weekly-title">이번 주 기록</h2>
+          <span>하루 달성률</span>
+        </div>
+        <div class="weekly-chart" id="weekly-chart" role="img" aria-label="이번 주 습관 달성률"></div>
+      </section>
+
       <form class="add-form" id="add-form">
         <label class="sr-only" for="habit-input">새 습관</label>
-        <input id="habit-input" type="text" maxlength="50" placeholder="새로운 습관을 입력하세요" autocomplete="off" required />
+        <input id="habit-input" type="text" maxlength="50" placeholder="새로운 습관을 입력하세요" autocomplete="off" />
         <button type="submit" aria-label="습관 추가">추가</button>
       </form>
     </section>
